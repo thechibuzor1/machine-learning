@@ -1,0 +1,16 @@
+import pandas as pd
+from sklearn.datasets import load_breast_cancer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
+df = pd.read_csv('https://sololearn.com/uploads/files/titanic.csv')
+df['male'] = df['Sex'] == 'male'
+X = df[['Pclass', 'male', 'Age', 'Siblings/Spouses', 'Parents/Children', 'Fare']].values
+y = df['Survived'].values
+
+
+rf = RandomForestClassifier()
+rf.fit(X,y)
+
+print(rf.predict(X))    
+ 
