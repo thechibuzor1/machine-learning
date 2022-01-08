@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
-df = pd.read_csv("desktop/ML/titanic.csv")
+df = pd.read_csv("https://github.com/thechibuzor1/machine-learning/blob/main/ML/titanic.csv")
 df['Male'] = df['Sex'] == 'Male'
 X = df[['Pclass','Male','Age','Siblings/Spouses','Parents/Children','Fare']].values
 y = df['Survived'].values
